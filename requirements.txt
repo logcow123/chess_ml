@@ -1,0 +1,16 @@
+# Training deps (GPU machine / Colab). Install CUDA PyTorch per pytorch.org, then: pip install -r requirements.txt && pip install -e .
+torch
+numpy
+pandas
+pyarrow
+python-chess
+pyyaml
+tqdm
+requests
+datasets
+scikit-learn
+lightgbm
+matplotlib
+jupyter
+pytest
+maia2

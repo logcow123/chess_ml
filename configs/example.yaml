@@ -1,0 +1,14 @@
+# One YAML per experiment. Copy this file and change the values.
+name: resnet_6x64_baseline
+model:
+  type: resnet        # mlp | cnn | resnet | transformer
+  blocks: 6
+  channels: 64
+data:
+  train_positions: 1000000
+  elo_band: [900, 1400]
+train:
+  lr: 0.001
+  batch_size: 1024
+  epochs: 10
+  seed: 42

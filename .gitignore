@@ -1,0 +1,17 @@
+# Data and checkpoints stay out of git (copies live in Google Drive)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+models/*
+!models/.gitkeep
+
+__pycache__/
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+node_modules/
+runs/
+wandb/

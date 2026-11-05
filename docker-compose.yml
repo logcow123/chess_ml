@@ -1,0 +1,8 @@
+# One service, port 8000, optional volume for model weights (filled in week 4).
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models:ro

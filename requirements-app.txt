@@ -1,0 +1,8 @@
+# App deps (Docker, CPU only). Install torch from the CPU index:
+# pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch
+numpy
+python-chess
+fastapi
+uvicorn[standard]
+pydantic

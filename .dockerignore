@@ -1,0 +1,8 @@
+data/
+models/*.pt
+notebooks/
+docs/
+.git/
+**/__pycache__/
+**/.DS_Store
+app/frontend/node_modules/
