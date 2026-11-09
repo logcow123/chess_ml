@@ -14,3 +14,5 @@ matplotlib
 jupyter
 pytest
 maia2
+huggingface_hub
+polars
