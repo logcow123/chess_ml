@@ -19,7 +19,7 @@ Usage (from the repo root, after `pip install -e .`):
     python -m chesspred.data.download_lichess --year 2025 --month 6 --shards 2   # quick test
     python -m chesspred.data.download_lichess --year 2025 --month 6 --shards 8   # real run
 
-Output:
+Output (always under the repo root, wherever you run this from; override with --out):
     data/raw/lichess/2025-06/shard_00012.parquet  (one filtered file per shard; reruns skip these)
     data/raw/lichess/lichess_2025-06_blitz-rapid_900-1400.parquet  (all shards combined)
 
@@ -47,6 +47,24 @@ COLUMNS = [
 
 KEEP_TERMINATIONS = ["Normal", "Time forfeit"]
 MIN_FULL_MOVES = 10
+
+
+def find_repo_root() -> Path:
+    """Walk up from this file to the folder holding pyproject.toml (the repo root).
+
+    This file lives at <repo>/src/chesspred/data/download_lichess.py, so the default
+    output always lands in <repo>/data/raw/lichess, whichever folder you run it from.
+    """
+    here = Path(__file__).resolve()
+    for parent in here.parents:
+        if (parent / "pyproject.toml").exists() or (parent / ".git").exists():
+            return parent
+    # Fallback: assume the standard layout (src/chesspred/data/ -> 3 levels up).
+    return here.parents[3] if len(here.parents) > 3 else Path.cwd()
+
+
+REPO_ROOT = find_repo_root()
+DEFAULT_OUT = REPO_ROOT / "data" / "raw" / "lichess"
 
 
 # --------------------------------------------------------------------------------------
@@ -137,7 +155,8 @@ def main() -> None:
     parser.add_argument("--max-elo", type=int, default=1400)
     parser.add_argument("--speeds", nargs="+", default=["Blitz", "Rapid"])
     parser.add_argument("--seed", type=int, default=0, help="which shards get picked")
-    parser.add_argument("--out", type=Path, default=Path("data/raw/lichess"))
+    parser.add_argument("--out", type=Path, default=DEFAULT_OUT,
+                        help=f"output folder (default: {DEFAULT_OUT})")
     parser.add_argument("--keep-raw", action="store_true", help="don't delete raw shards after filtering")
     args = parser.parse_args()
 
@@ -154,6 +173,9 @@ def main() -> None:
     if (args.year, args.month) == (2024, 10):
         print("Warning: the 2024-10 mirror has a known movetext bug (moves start with '0...'). "
               "Consider another month.")
+
+    args.out = args.out.resolve()
+    print(f"Saving to {args.out}")
 
     tag = f"{args.year}-{args.month:02d}"
     shard_dir = args.out / tag
