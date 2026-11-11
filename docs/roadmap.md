@@ -141,7 +141,7 @@ These are the yardstick for your own model. They're run off the shelf, and Maia-
 - [ ] **GPU machine setup:** install CUDA-enabled PyTorch on the 3060 machine and confirm `torch.cuda.is_available()` returns True. Make a Colab notebook that mounts Drive and installs the repo.
 - [x] Write `download_chesscom.py` to pull your **full** game history from the chess.com public API. More of your games means better fine-tuning and a bigger test set.
 - [x] Download **one month** of Lichess games (the Hugging Face parquet mirror is easiest). Filter to rated blitz/rapid games in your target Elo band.
-- [ ] Write the parser: PGN → rows of `(fen, move_uci, player_elo, opponent_elo, time_control, move_number, game_id)`. Save as parquet.
+- [x] Write the parser: PGN → rows of `(fen, move_uci, player_elo, opponent_elo, time_control, move_number, game_id)`. Save as parquet.
 - [ ] **Quick win:** run **Maia-2** (and Maia-3 if setup is easy) off the shelf on your games. That's the first comparison row, and it shows the bar your own model is aiming at.
 - [ ] **Freeze the test split now:** pick your held-out games (newest ~20%) and save their game IDs to a file. Every model, yours and Maia, gets scored on exactly these positions.
 - [ ] Baselines 0.1–0.3 from §6.

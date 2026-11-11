@@ -21,6 +21,7 @@ What each folder and file is for. The layout follows roadmap §9.
 |---|---|
 | `data/raw/` | Untouched source data: your chess.com PGNs (`chess_com_games_2026-11-04.pgn` lives here now) and Lichess downloads. |
 | `data/processed/` | Parsed parquet files and pre-encoded arrays ready for fast training. |
+| `data/splits/` | Frozen train/val/test game IDs for your games (`whopizza1_rapid.csv`). Tracked in git; never edit by hand. |
 
 ## `docs/`
 
@@ -48,6 +49,7 @@ One YAML file per experiment (model type and size, data size, learning rate, see
 | `data/download_chesscom.py` | Pulls your full game history from the chess.com API. |
 | `data/download_lichess.py` | Downloads and filters Lichess games to your Elo band and time controls. |
 | `data/parse_pgn.py` | PGN → `(fen, move_uci, player_elo, opponent_elo, time_control, move_number, game_id)` parquet. |
+| `data/split.py` | Freezes your games into train/val/test by date (oldest 70% / next 10% / newest 20%); `add_split_column(df)` applies it. |
 | `encoding.py` | Board → 8×8×18 tensor, move ↔ 4,096 index, legal-move mask. |
 | `models/mlp.py` | Model 1.1, the MLP sanity check. |
 | `models/cnn.py` | Model 1.2, plain CNN. |
