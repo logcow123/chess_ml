@@ -6,3 +6,4 @@ python-chess
 fastapi
 uvicorn[standard]
 pydantic
+chess
