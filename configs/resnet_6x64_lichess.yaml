@@ -1,0 +1,31 @@
+# Model 1.3: generic ResNet trained from scratch on Lichess rapid games, 900-1400 (row E).
+#   python -m chesspred.train configs/resnet_6x64_lichess.yaml
+# Output: models/runs/resnet_6x64_lichess/{best.pt,last.pt,log.csv}
+# When happy, copy best.pt to models/v1.pt and log the run in docs/results.md.
+name: resnet_6x64_lichess
+
+model:
+  type: resnet
+  blocks: 6          # depth. Next: 10, then 12 (Maia-2 uses 12)
+  channels: 64       # width. Next: 128, then 192 or 256
+  se: false          # squeeze-and-excitation in every block
+  elo: false         # model 1.4 (rating conditioning). Lichess and chess.com ratings differ!
+
+data:
+  train: data/processed/lichess_2025-09_blitz-rapid_900-1400_rapid.npz
+  train_positions: null   # cap the training set (null = all ~7.3M) for data-size experiments
+  keep_on_gpu: auto       # auto = on the GPU if it uses < half the free VRAM, else in RAM
+
+train:
+  epochs: 10
+  batch_size: 1024
+  lr: 0.001          # peak learning rate of the one-cycle schedule
+  weight_decay: 0.0001
+  warmup_pct: 0.1    # fraction of steps spent warming up to the peak lr
+  grad_clip: 1.0
+  amp: true          # bf16 mixed precision (CUDA only; ignored on CPU)
+  compile: false     # torch.compile: usually faster on Linux; often unavailable on Windows
+  seed: 42
+  log_every: 500     # steps between progress lines
+  init_from: null
+  freeze_blocks: 0

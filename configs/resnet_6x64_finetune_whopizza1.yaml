@@ -1,0 +1,22 @@
+# Fine-tune the Lichess model on YOUR chess.com rapid games (roadmap week 3, row F).
+#   python -m chesspred.train configs/resnet_6x64_finetune_whopizza1.yaml
+# Uses the frozen split in data/splits/: trains on "train" games, picks the best epoch on
+# "val" games, and never sees the "test" games. The first line it prints is the generic
+# model's score on your val games, so you can see what fine-tuning adds.
+name: resnet_6x64_finetune_whopizza1
+
+# No model section needed: the architecture comes from init_from's checkpoint.
+# Add e.g.  model: {elo: true}  to switch on Elo conditioning while fine-tuning.
+
+data:
+  train: data/processed/chesscom_whopizza1_2026-11-06_rapid_whopizza1-moves.npz
+
+train:
+  init_from: models/runs/resnet_6x64_lichess/best.pt
+  freeze_blocks: 0   # 0 = fine-tune everything. Try 3 or 6 to freeze the early layers
+  epochs: 15
+  batch_size: 256    # ~18k training positions, so smaller batches give more steps
+  lr: 0.0001         # 10x lower than pre-training, so it adapts without forgetting
+  weight_decay: 0.0001
+  warmup_pct: 0.1
+  log_every: 1000

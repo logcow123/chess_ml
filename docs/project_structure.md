@@ -20,7 +20,7 @@ What each folder and file is for. The layout follows roadmap §9.
 | Path | Purpose |
 |---|---|
 | `data/raw/` | Untouched source data: your chess.com PGNs (`chess_com_games_2026-11-04.pgn` lives here now) and Lichess downloads. |
-| `data/processed/` | Parsed parquet files and pre-encoded arrays ready for fast training. |
+| `data/processed/` | Parsed parquet files, plus the pre-encoded `.npz` arrays made from them by `encoding.py` (what `train.py` reads). |
 | `data/splits/` | Frozen train/val/test game IDs for your games (`whopizza1_rapid.csv`). Tracked in git; never edit by hand. |
 
 ## `docs/`
@@ -40,7 +40,7 @@ EDA (`01_eda.ipynb`), error analysis, and `colab_train.ipynb` for running traini
 
 ## `configs/`
 
-One YAML file per experiment (model type and size, data size, learning rate, seed). `example.yaml` shows the format. Log the config name in `results.md` for every run.
+One YAML file per experiment (model type and size, data size, learning rate, seed). `resnet_6x64_lichess.yaml` pre-trains the generic ResNet on Lichess; `resnet_6x64_finetune_whopizza1.yaml` fine-tunes it on your games. Log the config name in `results.md` for every run.
 
 ## `src/chesspred/` (the Python package)
 
@@ -50,12 +50,12 @@ One YAML file per experiment (model type and size, data size, learning rate, see
 | `data/download_lichess.py` | Downloads and filters Lichess games to your Elo band and time controls. |
 | `data/parse_pgn.py` | PGN → `(fen, move_uci, player_elo, opponent_elo, time_control, move_number, game_id)` parquet. |
 | `data/split.py` | Freezes your games into train/val/test by date (oldest 70% / next 10% / newest 20%); `add_split_column(df)` applies it. |
-| `encoding.py` | Board → 8×8×18 tensor, move ↔ 4,096 index, legal-move mask. |
+| `encoding.py` | Board → 8×8×18 tensor, move ↔ 4,096 index, legal-move mask. `python -m chesspred.encoding <parquet>` pre-encodes positions into a compact `.npz` (18 bitboards + legal moves per position) for fast GPU training. |
 | `models/mlp.py` | Model 1.1, the MLP sanity check. |
 | `models/cnn.py` | Model 1.2, plain CNN. |
-| `models/resnet.py` | Models 1.3/1.4, the ResNet policy network (with optional Elo conditioning). The main model. |
+| `models/resnet.py` | Models 1.3/1.4, the ResNet policy network (optional squeeze-and-excitation and Elo conditioning). The main model. `models/__init__.py` has `build_model`, `load_model` and `predict`. |
 | `models/transformer.py` | Model 1.6, board transformer (stretch). |
-| `train.py` | Training loop: split by game, mixed precision, resumable checkpoints, top-1/top-3 logging. |
+| `train.py` | Training loop for the RTX 3060: data kept on the GPU, bf16 mixed precision, resumable checkpoints, top-1/top-3 logging, `--overfit` sanity check, fine-tuning via `init_from`. |
 | `evaluate.py` | Scores any model on the frozen test split: all moves, excluding openings, and by phase. |
 
 ## `app/`
@@ -67,7 +67,7 @@ One YAML file per experiment (model type and size, data size, learning rate, see
 
 ## `models/`
 
-Trained checkpoints (`v1.pt`, `v2_personal.pt`, ...). Gitignored; keep copies in Google Drive.
+Trained checkpoints (`v1.pt`, `v2_personal.pt`, ...). Each training run writes `models/runs/<name>/` (`best.pt`, `last.pt`, `log.csv`, `config.yaml`); copy the run's `best.pt` to `v1.pt` etc. when it becomes a milestone. Gitignored; keep copies in Google Drive.
 
 ## `tests/`
 
