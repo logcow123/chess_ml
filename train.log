@@ -1,0 +1,340 @@
+﻿train_all started 2026-11-20T13:46:57
+
+=== 1/3 Overfit check: can the model memorise 64 positions?
+GPU: NVIDIA GeForce RTX 3060  (12.9 GB)
+Loaded lichess_2025-09_blitz-rapid_900-1400_rapid.npz: 15,116,048 positions, 5.59 GB, kept on the GPU (7s)
+  step  50  loss 0.0003  top-1 on the 64 positions 100.0%
+  step 100  loss 0.0001  top-1 on the 64 positions 100.0%
+  step 150  loss 0.0001  top-1 on the 64 positions 100.0%
+  step 200  loss 0.0000  top-1 on the 64 positions 100.0%
+  step 250  loss 0.0000  top-1 on the 64 positions 100.0%
+  step 300  loss 0.0000  top-1 on the 64 positions 100.0%
+PASS: the model can learn
+
+=== 2/3 Pre-training on Lichess (the long one; resumable)
+GPU: NVIDIA GeForce RTX 3060  (12.9 GB)
+Loaded lichess_2025-09_blitz-rapid_900-1400_rapid.npz: 15,116,048 positions, 5.59 GB, kept on the GPU (7s)
+train 14,814,031 positions | val 302,017 positions
+model {'type': 'resnet', 'blocks': 6, 'channels': 64, 'se': False, 'elo': False}: 8,849,216 params (8,849,216 trainable)
+No C:\Users\Logan\OneDrive\Desktop\chess\chess_ml\models\runs\resnet_6x64_lichess\last.pt yet, starting fresh
+  epoch 1 step 500/14,467  loss 2.748  23,232 pos/s  lr 4.28e-05
+  epoch 1 step 1,000/14,467  loss 2.694  25,988 pos/s  lr 5.13e-05
+  epoch 1 step 1,500/14,467  loss 2.647  27,084 pos/s  lr 6.52e-05
+  epoch 1 step 2,000/14,467  loss 2.597  27,668 pos/s  lr 8.46e-05
+  epoch 1 step 2,500/14,467  loss 2.546  28,017 pos/s  lr 1.09e-04
+  epoch 1 step 3,000/14,467  loss 2.497  28,244 pos/s  lr 1.38e-04
+  epoch 1 step 3,500/14,467  loss 2.452  28,423 pos/s  lr 1.72e-04
+  epoch 1 step 4,000/14,467  loss 2.412  28,549 pos/s  lr 2.10e-04
+  epoch 1 step 4,500/14,467  loss 2.377  28,651 pos/s  lr 2.52e-04
+  epoch 1 step 5,000/14,467  loss 2.346  28,732 pos/s  lr 2.96e-04
+  epoch 1 step 5,500/14,467  loss 2.319  28,798 pos/s  lr 3.44e-04
+  epoch 1 step 6,000/14,467  loss 2.294  28,852 pos/s  lr 3.93e-04
+  epoch 1 step 6,500/14,467  loss 2.271  28,900 pos/s  lr 4.44e-04
+  epoch 1 step 7,000/14,467  loss 2.250  28,942 pos/s  lr 4.96e-04
+  epoch 1 step 7,500/14,467  loss 2.232  28,978 pos/s  lr 5.48e-04
+  epoch 1 step 8,000/14,467  loss 2.214  29,010 pos/s  lr 6.00e-04
+  epoch 1 step 8,500/14,467  loss 2.197  29,036 pos/s  lr 6.50e-04
+  epoch 1 step 9,000/14,467  loss 2.182  29,059 pos/s  lr 7.00e-04
+  epoch 1 step 9,500/14,467  loss 2.167  29,080 pos/s  lr 7.47e-04
+  epoch 1 step 10,000/14,467  loss 2.153  29,100 pos/s  lr 7.91e-04
+  epoch 1 step 10,500/14,467  loss 2.140  29,118 pos/s  lr 8.33e-04
+  epoch 1 step 11,000/14,467  loss 2.128  29,135 pos/s  lr 8.70e-04
+  epoch 1 step 11,500/14,467  loss 2.115  29,150 pos/s  lr 9.04e-04
+  epoch 1 step 12,000/14,467  loss 2.104  29,163 pos/s  lr 9.33e-04
+  epoch 1 step 12,500/14,467  loss 2.093  29,177 pos/s  lr 9.57e-04
+  epoch 1 step 13,000/14,467  loss 2.082  29,188 pos/s  lr 9.76e-04
+  epoch 1 step 13,500/14,467  loss 2.073  29,199 pos/s  lr 9.89e-04
+  epoch 1 step 14,000/14,467  loss 2.063  29,208 pos/s  lr 9.98e-04
+epoch  1/10  train loss 2.054  |  val loss 1.797  top-1 44.7%  top-3 72.5%  *best*  (8.5 min, 29,018 pos/s)
+  epoch 2 step 500/14,467  loss 1.760  29,519 pos/s  lr 1.00e-03
+  epoch 2 step 1,000/14,467  loss 1.759  29,608 pos/s  lr 1.00e-03
+  epoch 2 step 1,500/14,467  loss 1.757  31,926 pos/s  lr 1.00e-03
+  epoch 2 step 2,000/14,467  loss 1.755  33,267 pos/s  lr 9.99e-04
+  epoch 2 step 2,500/14,467  loss 1.754  34,133 pos/s  lr 9.99e-04
+  epoch 2 step 3,000/14,467  loss 1.753  34,730 pos/s  lr 9.99e-04
+  epoch 2 step 3,500/14,467  loss 1.751  35,164 pos/s  lr 9.98e-04
+  epoch 2 step 4,000/14,467  loss 1.749  35,487 pos/s  lr 9.98e-04
+  epoch 2 step 4,500/14,467  loss 1.747  35,742 pos/s  lr 9.97e-04
+  epoch 2 step 5,000/14,467  loss 1.746  35,949 pos/s  lr 9.96e-04
+  epoch 2 step 5,500/14,467  loss 1.744  36,121 pos/s  lr 9.96e-04
+  epoch 2 step 6,000/14,467  loss 1.743  36,265 pos/s  lr 9.95e-04
+  epoch 2 step 6,500/14,467  loss 1.741  36,385 pos/s  lr 9.94e-04
+  epoch 2 step 7,000/14,467  loss 1.740  36,493 pos/s  lr 9.93e-04
+  epoch 2 step 7,500/14,467  loss 1.738  36,585 pos/s  lr 9.92e-04
+  epoch 2 step 8,000/14,467  loss 1.737  36,666 pos/s  lr 9.91e-04
+  epoch 2 step 8,500/14,467  loss 1.735  36,737 pos/s  lr 9.90e-04
+  epoch 2 step 9,000/14,467  loss 1.734  36,801 pos/s  lr 9.88e-04
+  epoch 2 step 9,500/14,467  loss 1.732  36,859 pos/s  lr 9.87e-04
+  epoch 2 step 10,000/14,467  loss 1.731  36,911 pos/s  lr 9.86e-04
+  epoch 2 step 10,500/14,467  loss 1.729  36,958 pos/s  lr 9.84e-04
+  epoch 2 step 11,000/14,467  loss 1.728  37,000 pos/s  lr 9.82e-04
+  epoch 2 step 11,500/14,467  loss 1.727  37,039 pos/s  lr 9.81e-04
+  epoch 2 step 12,000/14,467  loss 1.725  37,076 pos/s  lr 9.79e-04
+  epoch 2 step 12,500/14,467  loss 1.724  37,108 pos/s  lr 9.77e-04
+  epoch 2 step 13,000/14,467  loss 1.723  37,139 pos/s  lr 9.76e-04
+  epoch 2 step 13,500/14,467  loss 1.722  37,168 pos/s  lr 9.74e-04
+  epoch 2 step 14,000/14,467  loss 1.721  37,195 pos/s  lr 9.72e-04
+epoch  2/10  train loss 1.720  |  val loss 1.697  top-1 47.1%  top-3 75.0%  *best*  (6.6 min, 37,212 pos/s)
+  epoch 3 step 500/14,467  loss 1.638  38,076 pos/s  lr 9.68e-04
+  epoch 3 step 1,000/14,467  loss 1.639  37,967 pos/s  lr 9.66e-04
+  epoch 3 step 1,500/14,467  loss 1.640  37,953 pos/s  lr 9.63e-04
+  epoch 3 step 2,000/14,467  loss 1.640  37,942 pos/s  lr 9.61e-04
+  epoch 3 step 2,500/14,467  loss 1.641  37,942 pos/s  lr 9.59e-04
+  epoch 3 step 3,000/14,467  loss 1.642  37,940 pos/s  lr 9.56e-04
+  epoch 3 step 3,500/14,467  loss 1.643  37,934 pos/s  lr 9.54e-04
+  epoch 3 step 4,000/14,467  loss 1.643  37,939 pos/s  lr 9.51e-04
+  epoch 3 step 4,500/14,467  loss 1.644  37,935 pos/s  lr 9.49e-04
+  epoch 3 step 5,000/14,467  loss 1.644  37,933 pos/s  lr 9.46e-04
+  epoch 3 step 5,500/14,467  loss 1.644  37,931 pos/s  lr 9.43e-04
+  epoch 3 step 6,000/14,467  loss 1.644  37,933 pos/s  lr 9.40e-04
+  epoch 3 step 6,500/14,467  loss 1.645  37,934 pos/s  lr 9.37e-04
+  epoch 3 step 7,000/14,467  loss 1.645  37,935 pos/s  lr 9.34e-04
+  epoch 3 step 7,500/14,467  loss 1.645  37,931 pos/s  lr 9.31e-04
+  epoch 3 step 8,000/14,467  loss 1.645  37,931 pos/s  lr 9.28e-04
+  epoch 3 step 8,500/14,467  loss 1.645  37,931 pos/s  lr 9.25e-04
+  epoch 3 step 9,000/14,467  loss 1.645  37,933 pos/s  lr 9.22e-04
+  epoch 3 step 9,500/14,467  loss 1.645  37,931 pos/s  lr 9.19e-04
+  epoch 3 step 10,000/14,467  loss 1.645  37,930 pos/s  lr 9.15e-04
+  epoch 3 step 10,500/14,467  loss 1.645  37,930 pos/s  lr 9.12e-04
+  epoch 3 step 11,000/14,467  loss 1.645  37,929 pos/s  lr 9.09e-04
+  epoch 3 step 11,500/14,467  loss 1.645  37,928 pos/s  lr 9.05e-04
+  epoch 3 step 12,000/14,467  loss 1.645  37,929 pos/s  lr 9.01e-04
+  epoch 3 step 12,500/14,467  loss 1.645  37,928 pos/s  lr 8.98e-04
+  epoch 3 step 13,000/14,467  loss 1.645  37,927 pos/s  lr 8.94e-04
+  epoch 3 step 13,500/14,467  loss 1.644  37,927 pos/s  lr 8.90e-04
+  epoch 3 step 14,000/14,467  loss 1.644  37,927 pos/s  lr 8.87e-04
+epoch  3/10  train loss 1.644  |  val loss 1.668  top-1 47.9%  top-3 75.8%  *best*  (6.5 min, 37,921 pos/s)
+  epoch 4 step 500/14,467  loss 1.589  38,082 pos/s  lr 8.79e-04
+  epoch 4 step 1,000/14,467  loss 1.591  37,996 pos/s  lr 8.75e-04
+  epoch 4 step 1,500/14,467  loss 1.592  37,971 pos/s  lr 8.71e-04
+  epoch 4 step 2,000/14,467  loss 1.593  37,963 pos/s  lr 8.67e-04
+  epoch 4 step 2,500/14,467  loss 1.593  37,956 pos/s  lr 8.63e-04
+  epoch 4 step 3,000/14,467  loss 1.595  37,944 pos/s  lr 8.59e-04
+  epoch 4 step 3,500/14,467  loss 1.596  37,943 pos/s  lr 8.55e-04
+  epoch 4 step 4,000/14,467  loss 1.596  37,939 pos/s  lr 8.50e-04
+  epoch 4 step 4,500/14,467  loss 1.597  37,941 pos/s  lr 8.46e-04
+  epoch 4 step 5,000/14,467  loss 1.597  37,938 pos/s  lr 8.42e-04
+  epoch 4 step 5,500/14,467  loss 1.598  37,935 pos/s  lr 8.37e-04
+  epoch 4 step 6,000/14,467  loss 1.598  37,938 pos/s  lr 8.33e-04
+  epoch 4 step 6,500/14,467  loss 1.599  37,935 pos/s  lr 8.28e-04
+  epoch 4 step 7,000/14,467  loss 1.600  37,937 pos/s  lr 8.24e-04
+  epoch 4 step 7,500/14,467  loss 1.600  37,935 pos/s  lr 8.19e-04
+  epoch 4 step 8,000/14,467  loss 1.600  37,934 pos/s  lr 8.14e-04
+  epoch 4 step 8,500/14,467  loss 1.601  37,936 pos/s  lr 8.10e-04
+  epoch 4 step 9,000/14,467  loss 1.601  37,935 pos/s  lr 8.05e-04
+  epoch 4 step 9,500/14,467  loss 1.602  37,935 pos/s  lr 8.00e-04
+  epoch 4 step 10,000/14,467  loss 1.602  37,935 pos/s  lr 7.95e-04
+  epoch 4 step 10,500/14,467  loss 1.602  37,935 pos/s  lr 7.90e-04
+  epoch 4 step 11,000/14,467  loss 1.602  37,935 pos/s  lr 7.85e-04
+  epoch 4 step 11,500/14,467  loss 1.602  37,934 pos/s  lr 7.80e-04
+  epoch 4 step 12,000/14,467  loss 1.603  37,933 pos/s  lr 7.75e-04
+  epoch 4 step 12,500/14,467  loss 1.603  37,932 pos/s  lr 7.70e-04
+  epoch 4 step 13,000/14,467  loss 1.603  37,932 pos/s  lr 7.65e-04
+  epoch 4 step 13,500/14,467  loss 1.603  37,931 pos/s  lr 7.60e-04
+  epoch 4 step 14,000/14,467  loss 1.603  37,933 pos/s  lr 7.55e-04
+epoch  4/10  train loss 1.603  |  val loss 1.657  top-1 48.1%  top-3 76.0%  *best*  (6.5 min, 37,926 pos/s)
+  epoch 5 step 500/14,467  loss 1.556  38,098 pos/s  lr 7.45e-04
+  epoch 5 step 1,000/14,467  loss 1.557  38,023 pos/s  lr 7.39e-04
+  epoch 5 step 1,500/14,467  loss 1.558  37,986 pos/s  lr 7.34e-04
+  epoch 5 step 2,000/14,467  loss 1.560  37,969 pos/s  lr 7.29e-04
+  epoch 5 step 2,500/14,467  loss 1.562  37,953 pos/s  lr 7.23e-04
+  epoch 5 step 3,000/14,467  loss 1.563  37,953 pos/s  lr 7.18e-04
+  epoch 5 step 3,500/14,467  loss 1.564  37,949 pos/s  lr 7.13e-04
+  epoch 5 step 4,000/14,467  loss 1.564  37,938 pos/s  lr 7.07e-04
+  epoch 5 step 4,500/14,467  loss 1.565  37,938 pos/s  lr 7.02e-04
+  epoch 5 step 5,000/14,467  loss 1.565  37,939 pos/s  lr 6.96e-04
+  epoch 5 step 5,500/14,467  loss 1.566  37,941 pos/s  lr 6.90e-04
+  epoch 5 step 6,000/14,467  loss 1.567  37,939 pos/s  lr 6.85e-04
+  epoch 5 step 6,500/14,467  loss 1.567  37,935 pos/s  lr 6.79e-04
+  epoch 5 step 7,000/14,467  loss 1.568  37,934 pos/s  lr 6.74e-04
+  epoch 5 step 7,500/14,467  loss 1.568  37,933 pos/s  lr 6.68e-04
+  epoch 5 step 8,000/14,467  loss 1.569  37,933 pos/s  lr 6.62e-04
+  epoch 5 step 8,500/14,467  loss 1.569  37,933 pos/s  lr 6.57e-04
+  epoch 5 step 9,000/14,467  loss 1.569  37,931 pos/s  lr 6.51e-04
+  epoch 5 step 9,500/14,467  loss 1.570  37,931 pos/s  lr 6.45e-04
+  epoch 5 step 10,000/14,467  loss 1.570  37,930 pos/s  lr 6.39e-04
+  epoch 5 step 10,500/14,467  loss 1.571  37,929 pos/s  lr 6.33e-04
+  epoch 5 step 11,000/14,467  loss 1.571  37,929 pos/s  lr 6.28e-04
+  epoch 5 step 11,500/14,467  loss 1.571  37,929 pos/s  lr 6.22e-04
+  epoch 5 step 12,000/14,467  loss 1.571  37,928 pos/s  lr 6.16e-04
+  epoch 5 step 12,500/14,467  loss 1.572  37,928 pos/s  lr 6.10e-04
+  epoch 5 step 13,000/14,467  loss 1.572  37,928 pos/s  lr 6.04e-04
+  epoch 5 step 13,500/14,467  loss 1.572  37,928 pos/s  lr 5.98e-04
+  epoch 5 step 14,000/14,467  loss 1.573  37,929 pos/s  lr 5.92e-04
+epoch  5/10  train loss 1.573  |  val loss 1.652  top-1 48.2%  top-3 76.2%  *best*  (6.5 min, 37,922 pos/s)
+  epoch 6 step 500/14,467  loss 1.532  38,054 pos/s  lr 5.81e-04
+  epoch 6 step 1,000/14,467  loss 1.534  37,998 pos/s  lr 5.75e-04
+  epoch 6 step 1,500/14,467  loss 1.534  37,980 pos/s  lr 5.69e-04
+  epoch 6 step 2,000/14,467  loss 1.536  37,967 pos/s  lr 5.63e-04
+  epoch 6 step 2,500/14,467  loss 1.536  37,958 pos/s  lr 5.57e-04
+  epoch 6 step 3,000/14,467  loss 1.537  37,951 pos/s  lr 5.51e-04
+  epoch 6 step 3,500/14,467  loss 1.538  37,951 pos/s  lr 5.45e-04
+  epoch 6 step 4,000/14,467  loss 1.538  37,946 pos/s  lr 5.39e-04
+  epoch 6 step 4,500/14,467  loss 1.539  37,942 pos/s  lr 5.33e-04
+  epoch 6 step 5,000/14,467  loss 1.540  37,941 pos/s  lr 5.27e-04
+  epoch 6 step 5,500/14,467  loss 1.540  37,939 pos/s  lr 5.21e-04
+  epoch 6 step 6,000/14,467  loss 1.541  37,939 pos/s  lr 5.15e-04
+  epoch 6 step 6,500/14,467  loss 1.541  37,937 pos/s  lr 5.09e-04
+  epoch 6 step 7,000/14,467  loss 1.542  37,934 pos/s  lr 5.03e-04
+  epoch 6 step 7,500/14,467  loss 1.542  37,934 pos/s  lr 4.97e-04
+  epoch 6 step 8,000/14,467  loss 1.543  37,932 pos/s  lr 4.91e-04
+  epoch 6 step 8,500/14,467  loss 1.543  37,932 pos/s  lr 4.85e-04
+  epoch 6 step 9,000/14,467  loss 1.544  37,932 pos/s  lr 4.79e-04
+  epoch 6 step 9,500/14,467  loss 1.544  37,932 pos/s  lr 4.73e-04
+  epoch 6 step 10,000/14,467  loss 1.544  37,930 pos/s  lr 4.67e-04
+  epoch 6 step 10,500/14,467  loss 1.545  37,930 pos/s  lr 4.61e-04
+  epoch 6 step 11,000/14,467  loss 1.545  37,929 pos/s  lr 4.55e-04
+  epoch 6 step 11,500/14,467  loss 1.545  37,931 pos/s  lr 4.49e-04
+  epoch 6 step 12,000/14,467  loss 1.546  37,930 pos/s  lr 4.43e-04
+  epoch 6 step 12,500/14,467  loss 1.546  37,931 pos/s  lr 4.37e-04
+  epoch 6 step 13,000/14,467  loss 1.546  37,930 pos/s  lr 4.31e-04
+  epoch 6 step 13,500/14,467  loss 1.546  37,931 pos/s  lr 4.25e-04
+  epoch 6 step 14,000/14,467  loss 1.546  37,932 pos/s  lr 4.19e-04
+epoch  6/10  train loss 1.546  |  val loss 1.651  top-1 48.3%  top-3 76.3%  *best*  (6.5 min, 37,925 pos/s)
+  epoch 7 step 500/14,467  loss 1.508  38,079 pos/s  lr 4.07e-04
+  epoch 7 step 1,000/14,467  loss 1.511  38,021 pos/s  lr 4.01e-04
+  epoch 7 step 1,500/14,467  loss 1.511  37,990 pos/s  lr 3.95e-04
+  epoch 7 step 2,000/14,467  loss 1.513  37,983 pos/s  lr 3.90e-04
+  epoch 7 step 2,500/14,467  loss 1.514  37,974 pos/s  lr 3.84e-04
+  epoch 7 step 3,000/14,467  loss 1.515  37,965 pos/s  lr 3.78e-04
+  epoch 7 step 3,500/14,467  loss 1.516  37,967 pos/s  lr 3.72e-04
+  epoch 7 step 4,000/14,467  loss 1.516  37,961 pos/s  lr 3.66e-04
+  epoch 7 step 4,500/14,467  loss 1.517  37,956 pos/s  lr 3.60e-04
+  epoch 7 step 5,000/14,467  loss 1.518  37,954 pos/s  lr 3.55e-04
+  epoch 7 step 5,500/14,467  loss 1.518  37,956 pos/s  lr 3.49e-04
+  epoch 7 step 6,000/14,467  loss 1.518  37,955 pos/s  lr 3.43e-04
+  epoch 7 step 6,500/14,467  loss 1.519  37,952 pos/s  lr 3.37e-04
+  epoch 7 step 7,000/14,467  loss 1.520  37,952 pos/s  lr 3.32e-04
+  epoch 7 step 7,500/14,467  loss 1.520  37,950 pos/s  lr 3.26e-04
+  epoch 7 step 8,000/14,467  loss 1.520  37,952 pos/s  lr 3.20e-04
+  epoch 7 step 8,500/14,467  loss 1.520  37,950 pos/s  lr 3.15e-04
+  epoch 7 step 9,000/14,467  loss 1.521  37,946 pos/s  lr 3.09e-04
+  epoch 7 step 9,500/14,467  loss 1.521  37,948 pos/s  lr 3.04e-04
+  epoch 7 step 10,000/14,467  loss 1.521  37,947 pos/s  lr 2.98e-04
+  epoch 7 step 10,500/14,467  loss 1.521  37,946 pos/s  lr 2.93e-04
+  epoch 7 step 11,000/14,467  loss 1.522  37,944 pos/s  lr 2.87e-04
+  epoch 7 step 11,500/14,467  loss 1.522  37,944 pos/s  lr 2.82e-04
+  epoch 7 step 12,000/14,467  loss 1.522  37,943 pos/s  lr 2.76e-04
+  epoch 7 step 12,500/14,467  loss 1.522  37,943 pos/s  lr 2.71e-04
+  epoch 7 step 13,000/14,467  loss 1.523  37,942 pos/s  lr 2.65e-04
+  epoch 7 step 13,500/14,467  loss 1.523  37,940 pos/s  lr 2.60e-04
+  epoch 7 step 14,000/14,467  loss 1.523  37,939 pos/s  lr 2.55e-04
+epoch  7/10  train loss 1.523  |  val loss 1.654  top-1 48.3%  top-3 76.3%  (6.5 min, 37,932 pos/s)
+  epoch 8 step 500/14,467  loss 1.495  38,047 pos/s  lr 2.45e-04
+  epoch 8 step 1,000/14,467  loss 1.496  37,978 pos/s  lr 2.40e-04
+  epoch 8 step 1,500/14,467  loss 1.496  37,962 pos/s  lr 2.34e-04
+  epoch 8 step 2,000/14,467  loss 1.497  37,958 pos/s  lr 2.29e-04
+  epoch 8 step 2,500/14,467  loss 1.497  37,943 pos/s  lr 2.24e-04
+  epoch 8 step 3,000/14,467  loss 1.498  37,948 pos/s  lr 2.19e-04
+  epoch 8 step 3,500/14,467  loss 1.498  37,945 pos/s  lr 2.14e-04
+  epoch 8 step 4,000/14,467  loss 1.498  37,942 pos/s  lr 2.09e-04
+  epoch 8 step 4,500/14,467  loss 1.499  37,940 pos/s  lr 2.05e-04
+  epoch 8 step 5,000/14,467  loss 1.499  37,939 pos/s  lr 2.00e-04
+  epoch 8 step 5,500/14,467  loss 1.499  37,936 pos/s  lr 1.95e-04
+  epoch 8 step 6,000/14,467  loss 1.500  37,936 pos/s  lr 1.90e-04
+  epoch 8 step 6,500/14,467  loss 1.500  37,936 pos/s  lr 1.85e-04
+  epoch 8 step 7,000/14,467  loss 1.500  37,938 pos/s  lr 1.81e-04
+  epoch 8 step 7,500/14,467  loss 1.500  37,935 pos/s  lr 1.76e-04
+  epoch 8 step 8,000/14,467  loss 1.500  37,934 pos/s  lr 1.72e-04
+  epoch 8 step 8,500/14,467  loss 1.500  37,933 pos/s  lr 1.67e-04
+  epoch 8 step 9,000/14,467  loss 1.501  37,935 pos/s  lr 1.63e-04
+  epoch 8 step 9,500/14,467  loss 1.501  37,933 pos/s  lr 1.58e-04
+  epoch 8 step 10,000/14,467  loss 1.501  37,932 pos/s  lr 1.54e-04
+  epoch 8 step 10,500/14,467  loss 1.501  37,933 pos/s  lr 1.49e-04
+  epoch 8 step 11,000/14,467  loss 1.501  37,932 pos/s  lr 1.45e-04
+  epoch 8 step 11,500/14,467  loss 1.502  37,932 pos/s  lr 1.41e-04
+  epoch 8 step 12,000/14,467  loss 1.502  37,931 pos/s  lr 1.37e-04
+  epoch 8 step 12,500/14,467  loss 1.502  37,931 pos/s  lr 1.33e-04
+  epoch 8 step 13,000/14,467  loss 1.502  37,931 pos/s  lr 1.29e-04
+  epoch 8 step 13,500/14,467  loss 1.502  37,932 pos/s  lr 1.25e-04
+  epoch 8 step 14,000/14,467  loss 1.502  37,931 pos/s  lr 1.21e-04
+epoch  8/10  train loss 1.503  |  val loss 1.657  top-1 48.2%  top-3 76.3%  (6.5 min, 37,924 pos/s)
+  epoch 9 step 500/14,467  loss 1.484  38,079 pos/s  lr 1.13e-04
+  epoch 9 step 1,000/14,467  loss 1.483  38,002 pos/s  lr 1.09e-04
+  epoch 9 step 1,500/14,467  loss 1.483  37,976 pos/s  lr 1.06e-04
+  epoch 9 step 2,000/14,467  loss 1.484  37,963 pos/s  lr 1.02e-04
+  epoch 9 step 2,500/14,467  loss 1.484  37,956 pos/s  lr 9.83e-05
+  epoch 9 step 3,000/14,467  loss 1.484  37,949 pos/s  lr 9.47e-05
+  epoch 9 step 3,500/14,467  loss 1.485  37,946 pos/s  lr 9.12e-05
+  epoch 9 step 4,000/14,467  loss 1.484  37,943 pos/s  lr 8.78e-05
+  epoch 9 step 4,500/14,467  loss 1.484  37,944 pos/s  lr 8.44e-05
+  epoch 9 step 5,000/14,467  loss 1.485  37,940 pos/s  lr 8.11e-05
+  epoch 9 step 5,500/14,467  loss 1.485  37,942 pos/s  lr 7.78e-05
+  epoch 9 step 6,000/14,467  loss 1.486  37,939 pos/s  lr 7.46e-05
+  epoch 9 step 6,500/14,467  loss 1.486  37,937 pos/s  lr 7.15e-05
+  epoch 9 step 7,000/14,467  loss 1.486  37,937 pos/s  lr 6.84e-05
+  epoch 9 step 7,500/14,467  loss 1.486  37,936 pos/s  lr 6.54e-05
+  epoch 9 step 8,000/14,467  loss 1.486  37,935 pos/s  lr 6.24e-05
+  epoch 9 step 8,500/14,467  loss 1.486  37,934 pos/s  lr 5.95e-05
+  epoch 9 step 9,000/14,467  loss 1.487  37,934 pos/s  lr 5.67e-05
+  epoch 9 step 9,500/14,467  loss 1.486  37,933 pos/s  lr 5.40e-05
+  epoch 9 step 10,000/14,467  loss 1.487  37,933 pos/s  lr 5.13e-05
+  epoch 9 step 10,500/14,467  loss 1.487  37,932 pos/s  lr 4.86e-05
+  epoch 9 step 11,000/14,467  loss 1.487  37,932 pos/s  lr 4.61e-05
+  epoch 9 step 11,500/14,467  loss 1.487  37,931 pos/s  lr 4.36e-05
+  epoch 9 step 12,000/14,467  loss 1.487  37,932 pos/s  lr 4.12e-05
+  epoch 9 step 12,500/14,467  loss 1.487  37,932 pos/s  lr 3.88e-05
+  epoch 9 step 13,000/14,467  loss 1.487  37,931 pos/s  lr 3.65e-05
+  epoch 9 step 13,500/14,467  loss 1.487  37,931 pos/s  lr 3.43e-05
+  epoch 9 step 14,000/14,467  loss 1.487  37,930 pos/s  lr 3.21e-05
+epoch  9/10  train loss 1.487  |  val loss 1.662  top-1 48.3%  top-3 76.3%  (6.5 min, 37,924 pos/s)
+  epoch 10 step 500/14,467  loss 1.479  38,025 pos/s  lr 2.81e-05
+  epoch 10 step 1,000/14,467  loss 1.477  37,989 pos/s  lr 2.62e-05
+  epoch 10 step 1,500/14,467  loss 1.478  37,962 pos/s  lr 2.43e-05
+  epoch 10 step 2,000/14,467  loss 1.478  37,958 pos/s  lr 2.25e-05
+  epoch 10 step 2,500/14,467  loss 1.478  37,952 pos/s  lr 2.07e-05
+  epoch 10 step 3,000/14,467  loss 1.478  37,948 pos/s  lr 1.90e-05
+  epoch 10 step 3,500/14,467  loss 1.477  37,944 pos/s  lr 1.74e-05
+  epoch 10 step 4,000/14,467  loss 1.477  37,942 pos/s  lr 1.59e-05
+  epoch 10 step 4,500/14,467  loss 1.477  37,940 pos/s  lr 1.44e-05
+  epoch 10 step 5,000/14,467  loss 1.478  37,938 pos/s  lr 1.30e-05
+  epoch 10 step 5,500/14,467  loss 1.478  37,937 pos/s  lr 1.17e-05
+  epoch 10 step 6,000/14,467  loss 1.478  37,937 pos/s  lr 1.04e-05
+  epoch 10 step 6,500/14,467  loss 1.478  37,939 pos/s  lr 9.21e-06
+  epoch 10 step 7,000/14,467  loss 1.478  37,937 pos/s  lr 8.09e-06
+  epoch 10 step 7,500/14,467  loss 1.478  37,934 pos/s  lr 7.05e-06
+  epoch 10 step 8,000/14,467  loss 1.478  37,934 pos/s  lr 6.08e-06
+  epoch 10 step 8,500/14,467  loss 1.478  37,933 pos/s  lr 5.18e-06
+  epoch 10 step 9,000/14,467  loss 1.478  37,934 pos/s  lr 4.35e-06
+  epoch 10 step 9,500/14,467  loss 1.478  37,933 pos/s  lr 3.59e-06
+  epoch 10 step 10,000/14,467  loss 1.478  37,931 pos/s  lr 2.90e-06
+  epoch 10 step 10,500/14,467  loss 1.478  37,932 pos/s  lr 2.29e-06
+  epoch 10 step 11,000/14,467  loss 1.478  37,932 pos/s  lr 1.75e-06
+  epoch 10 step 11,500/14,467  loss 1.478  37,932 pos/s  lr 1.28e-06
+  epoch 10 step 12,000/14,467  loss 1.478  37,931 pos/s  lr 8.89e-07
+  epoch 10 step 12,500/14,467  loss 1.478  37,929 pos/s  lr 5.66e-07
+  epoch 10 step 13,000/14,467  loss 1.478  37,931 pos/s  lr 3.17e-07
+  epoch 10 step 13,500/14,467  loss 1.478  37,930 pos/s  lr 1.40e-07
+  epoch 10 step 14,000/14,467  loss 1.478  37,930 pos/s  lr 3.56e-08
+epoch 10/10  train loss 1.478  |  val loss 1.663  top-1 48.2%  top-3 76.3%  (6.5 min, 37,923 pos/s)
+
+Done. Best val top-1 48.3%  ->  C:\Users\Logan\OneDrive\Desktop\chess\chess_ml\models\runs\resnet_6x64_lichess\best.pt
+
+=== 3/3 Fine-tuning on your games
+GPU: NVIDIA GeForce RTX 3060  (12.9 GB)
+Loaded chesscom_whopizza1_2026-11-20_rapid_whopizza1-moves.npz: 28,233 positions, 0.01 GB, kept on the GPU (0s)
+train 18,208 positions | val 2,459 positions
+Initialised from C:\Users\Logan\OneDrive\Desktop\chess\chess_ml\models\runs\resnet_6x64_lichess\best.pt (epoch 6, val top-1 48.3%)
+model {'type': 'resnet', 'blocks': 6, 'channels': 64, 'se': False, 'elo': False}: 8,849,216 params (8,849,216 trainable)
+No C:\Users\Logan\OneDrive\Desktop\chess\chess_ml\models\runs\resnet_6x64_finetune_whopizza1\last.pt yet, starting fresh
+before fine-tuning: val loss 1.617  top-1 48.4%  top-3 77.6%
+epoch  1/15  train loss 1.580  |  val loss 1.610  top-1 49.6%  top-3 78.0%  *best*  (0.1 min, 2,488 pos/s)
+epoch  2/15  train loss 1.539  |  val loss 1.592  top-1 50.1%  top-3 77.8%  *best*  (0.0 min, 17,028 pos/s)
+epoch  3/15  train loss 1.478  |  val loss 1.584  top-1 50.1%  top-3 78.0%  *best*  (0.0 min, 20,066 pos/s)
+epoch  4/15  train loss 1.428  |  val loss 1.578  top-1 51.5%  top-3 77.8%  *best*  (0.0 min, 19,421 pos/s)
+epoch  5/15  train loss 1.384  |  val loss 1.580  top-1 50.7%  top-3 77.9%  (0.0 min, 19,750 pos/s)
+epoch  6/15  train loss 1.346  |  val loss 1.582  top-1 51.0%  top-3 78.2%  (0.0 min, 19,421 pos/s)
+epoch  7/15  train loss 1.312  |  val loss 1.585  top-1 51.1%  top-3 78.5%  (0.0 min, 19,751 pos/s)
+epoch  8/15  train loss 1.284  |  val loss 1.590  top-1 50.6%  top-3 78.9%  (0.0 min, 19,751 pos/s)
+epoch  9/15  train loss 1.260  |  val loss 1.595  top-1 50.7%  top-3 79.1%  (0.0 min, 19,710 pos/s)
+epoch 10/15  train loss 1.242  |  val loss 1.595  top-1 50.7%  top-3 79.1%  (0.0 min, 19,684 pos/s)
+epoch 11/15  train loss 1.228  |  val loss 1.597  top-1 50.7%  top-3 79.2%  (0.0 min, 19,733 pos/s)
+epoch 12/15  train loss 1.217  |  val loss 1.599  top-1 50.6%  top-3 79.1%  (0.0 min, 19,642 pos/s)
+epoch 13/15  train loss 1.212  |  val loss 1.598  top-1 50.8%  top-3 79.2%  (0.0 min, 19,537 pos/s)
+epoch 14/15  train loss 1.209  |  val loss 1.599  top-1 50.9%  top-3 79.1%  (0.0 min, 19,788 pos/s)
+epoch 15/15  train loss 1.208  |  val loss 1.599  top-1 50.9%  top-3 79.1%  (0.0 min, 19,878 pos/s)
+
+Done. Best val top-1 51.5%  ->  C:\Users\Logan\OneDrive\Desktop\chess\chess_ml\models\runs\resnet_6x64_finetune_whopizza1\best.pt
+
+=== DONE. Checkpoints and log.csv are in models\runs\<run name>\
+TRAIN_RESULT=OK

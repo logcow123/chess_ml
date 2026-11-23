@@ -1,0 +1,253 @@
+﻿setup_venv started 2026-11-20T13:23:29
+
+=== Reusing existing .venv (Python 3.12)
+Requirement already satisfied: pip in .\.venv\Lib\site-packages (26.3)
+Requirement already satisfied: setuptools in .\.venv\Lib\site-packages (84.2.1)
+Requirement already satisfied: wheel in .\.venv\Lib\site-packages (0.48.0)
+Requirement already satisfied: packaging>=24.0 in .\.venv\Lib\site-packages (from wheel) (26.3)
+Fri Nov 20 13:23:31 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.88                 KMD Version: 610.88        CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 3060      WDDM  |   00000000:01:00.0  On |                  N/A |
+| 37%   58C    P0             39W /  170W |     981MiB /  12288MiB |     15%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            4708    C+G   ...Next\CNext\RadeonSoftware.exe      N/A      |
+|    0   N/A  N/A            6952    C+G   ...5n1h2txyewy\TextInputHost.exe      N/A      |
+|    0   N/A  N/A            8560    C+G   ...yb3d8bbwe\WindowsTerminal.exe      N/A      |
+|    0   N/A  N/A            9048    C+G   C:\Windows\explorer.exe               N/A      |
+|    0   N/A  N/A           10212    C+G   ...IA App\CEF\NVIDIA Overlay.exe      N/A      |
+|    0   N/A  N/A           10948    C+G   ..._cw5n1h2txyewy\SearchHost.exe      N/A      |
+|    0   N/A  N/A           11072    C+G   ...y\StartMenuExperienceHost.exe      N/A      |
+|    0   N/A  N/A           11512    C+G   ...aries\Win64\EpicWebHelper.exe      N/A      |
+|    0   N/A  N/A           13068    C+G   ...IA App\CEF\NVIDIA Overlay.exe      N/A      |
+|    0   N/A  N/A           13532    C+G   ....0.4341.46\msedgewebview2.exe      N/A      |
+|    0   N/A  N/A           14212    C+G   ...App_cw5n1h2txyewy\LockApp.exe      N/A      |
+|    0   N/A  N/A           14588    C+G   ....0.4341.46\msedgewebview2.exe      N/A      |
+|    0   N/A  N/A           15644    C+G   ...Chrome\Application\chrome.exe      N/A      |
+|    0   N/A  N/A           15964    C+G   ...ms\Microsoft VS Code\Code.exe      N/A      |
+|    0   N/A  N/A           16476    C+G   ...s\MuseHub\current\MuseHub.exe      N/A      |
+|    0   N/A  N/A           16968    C+G   ...8bbwe\PhoneExperienceHost.exe      N/A      |
+|    0   N/A  N/A           17496    C+G   ...0.314.1.1\OverwolfBrowser.exe      N/A      |
+|    0   N/A  N/A           17760    C+G   ...erwolf\0.314.1.1\Overwolf.exe      N/A      |
+|    0   N/A  N/A           17816    C+G   ...m Files (x86)\Steam\steam.exe      N/A      |
+|    0   N/A  N/A           18024    C+G   ...\cef.win64\steamwebhelper.exe      N/A      |
+|    0   N/A  N/A           18844    C+G   ..._pzs8sxrjxfjjc\app\claude.exe      N/A      |
+|    0   N/A  N/A           19676    C+G   ...ayRenderer-Win64-Shipping.exe      N/A      |
+|    0   N/A  N/A           21952    C+G   ...s\Win64\EpicGamesLauncher.exe      N/A      |
+|    0   N/A  N/A           22280    C+G   ...t\Edge\Application\msedge.exe      N/A      |
+|    0   N/A  N/A           24224    C+G   ...ntrolPanel\SystemSettings.exe      N/A      |
+|    0   N/A  N/A           24412    C+G   ..._pzs8sxrjxfjjc\app\claude.exe      N/A      |
+|    0   N/A  N/A           24904    C+G   ...xyewy\ShellExperienceHost.exe      N/A      |
+|    0   N/A  N/A           26200    C+G   ...D\CNext\CNext\AMDRSSrcExt.exe      N/A      |
++-----------------------------------------------------------------------------------------+
+
+=== Driver supports CUDA 13.3 -> installing torch 2.8.0+cu128
+
+=== Installing PyTorch 2.8.0 (cu128) - about 3 GB, this is the slow part
+Looking in indexes: https://download.pytorch.org/whl/cu128
+Requirement already satisfied: torch==2.8.0 in .\.venv\Lib\site-packages (2.8.0+cu126)
+Requirement already satisfied: filelock in .\.venv\Lib\site-packages (from torch==2.8.0) (4.2.4)
+Requirement already satisfied: typing-extensions>=4.10.0 in .\.venv\Lib\site-packages (from torch==2.8.0) (4.16.0)
+Requirement already satisfied: sympy>=1.13.3 in .\.venv\Lib\site-packages (from torch==2.8.0) (1.14.0)
+Requirement already satisfied: networkx in .\.venv\Lib\site-packages (from torch==2.8.0) (3.7)
+Requirement already satisfied: jinja2 in .\.venv\Lib\site-packages (from torch==2.8.0) (3.1.6)
+Requirement already satisfied: fsspec in .\.venv\Lib\site-packages (from torch==2.8.0) (2026.9.0)
+Requirement already satisfied: setuptools in .\.venv\Lib\site-packages (from torch==2.8.0) (84.2.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in .\.venv\Lib\site-packages (from sympy>=1.13.3->torch==2.8.0) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in .\.venv\Lib\site-packages (from jinja2->torch==2.8.0) (3.0.3)
+
+=== Installing requirements.txt
+Requirement already satisfied: torch in .\.venv\Lib\site-packages (from -r requirements.txt (line 2)) (2.8.0+cu126)
+Requirement already satisfied: numpy in .\.venv\Lib\site-packages (from -r requirements.txt (line 3)) (2.5.5)
+Requirement already satisfied: pandas in .\.venv\Lib\site-packages (from -r requirements.txt (line 4)) (2.3.3)
+Requirement already satisfied: pyarrow in .\.venv\Lib\site-packages (from -r requirements.txt (line 5)) (26.0.1)
+Requirement already satisfied: python-chess in .\.venv\Lib\site-packages (from -r requirements.txt (line 6)) (1.999)
+Requirement already satisfied: pyyaml in .\.venv\Lib\site-packages (from -r requirements.txt (line 7)) (6.0.3)
+Requirement already satisfied: tqdm in .\.venv\Lib\site-packages (from -r requirements.txt (line 8)) (4.70.1)
+Requirement already satisfied: requests in .\.venv\Lib\site-packages (from -r requirements.txt (line 9)) (2.34.2)
+Requirement already satisfied: datasets in .\.venv\Lib\site-packages (from -r requirements.txt (line 10)) (5.2.0)
+Requirement already satisfied: scikit-learn in .\.venv\Lib\site-packages (from -r requirements.txt (line 11)) (1.9.1)
+Requirement already satisfied: lightgbm in .\.venv\Lib\site-packages (from -r requirements.txt (line 12)) (4.7.0)
+Requirement already satisfied: matplotlib in .\.venv\Lib\site-packages (from -r requirements.txt (line 13)) (3.11.2)
+Requirement already satisfied: jupyter in .\.venv\Lib\site-packages (from -r requirements.txt (line 14)) (1.1.1)
+Requirement already satisfied: pytest in .\.venv\Lib\site-packages (from -r requirements.txt (line 15)) (9.2.0)
+Requirement already satisfied: maia2 in .\.venv\Lib\site-packages (from -r requirements.txt (line 16)) (0.11.0)
+Requirement already satisfied: huggingface_hub in .\.venv\Lib\site-packages (from -r requirements.txt (line 17)) (2.4.0)
+Requirement already satisfied: polars in .\.venv\Lib\site-packages (from -r requirements.txt (line 18)) (2.1.0)
+Requirement already satisfied: chess in .\.venv\Lib\site-packages (from -r requirements.txt (line 19)) (1.11.2)
+Requirement already satisfied: filelock in .\.venv\Lib\site-packages (from torch->-r requirements.txt (line 2)) (4.2.4)
+Requirement already satisfied: typing-extensions>=4.10.0 in .\.venv\Lib\site-packages (from torch->-r requirements.txt (line 2)) (4.16.0)
+Requirement already satisfied: sympy>=1.13.3 in .\.venv\Lib\site-packages (from torch->-r requirements.txt (line 2)) (1.14.0)
+Requirement already satisfied: networkx in .\.venv\Lib\site-packages (from torch->-r requirements.txt (line 2)) (3.7)
+Requirement already satisfied: jinja2 in .\.venv\Lib\site-packages (from torch->-r requirements.txt (line 2)) (3.1.6)
+Requirement already satisfied: fsspec in .\.venv\Lib\site-packages (from torch->-r requirements.txt (line 2)) (2026.9.0)
+Requirement already satisfied: setuptools in .\.venv\Lib\site-packages (from torch->-r requirements.txt (line 2)) (84.2.1)
+Requirement already satisfied: python-dateutil>=2.8.2 in .\.venv\Lib\site-packages (from pandas->-r requirements.txt (line 4)) (4.0.0)
+Requirement already satisfied: pytz>=2020.1 in .\.venv\Lib\site-packages (from pandas->-r requirements.txt (line 4)) (2026.6)
+Requirement already satisfied: tzdata>=2022.7 in .\.venv\Lib\site-packages (from pandas->-r requirements.txt (line 4)) (2026.6)
+Requirement already satisfied: colorama in .\.venv\Lib\site-packages (from tqdm->-r requirements.txt (line 8)) (0.4.6)
+Requirement already satisfied: charset_normalizer<4,>=2 in .\.venv\Lib\site-packages (from requests->-r requirements.txt (line 9)) (3.5.2)
+Requirement already satisfied: idna<4,>=2.5 in .\.venv\Lib\site-packages (from requests->-r requirements.txt (line 9)) (3.20)
+Requirement already satisfied: urllib3<3,>=1.26 in .\.venv\Lib\site-packages (from requests->-r requirements.txt (line 9)) (2.8.0)
+Requirement already satisfied: certifi>=2023.5.7 in .\.venv\Lib\site-packages (from requests->-r requirements.txt (line 9)) (2026.10.23)
+Requirement already satisfied: dill<0.4.2,>=0.3.0 in .\.venv\Lib\site-packages (from datasets->-r requirements.txt (line 10)) (0.4.1)
+Requirement already satisfied: xxhash in .\.venv\Lib\site-packages (from datasets->-r requirements.txt (line 10)) (4.1.0)
+Requirement already satisfied: multiprocess<0.70.20 in .\.venv\Lib\site-packages (from datasets->-r requirements.txt (line 10)) (0.70.19)
+Requirement already satisfied: packaging in .\.venv\Lib\site-packages (from datasets->-r requirements.txt (line 10)) (26.3)
+Requirement already satisfied: click<9.0.0,>=8.4.2 in .\.venv\Lib\site-packages (from huggingface_hub->-r requirements.txt (line 17)) (8.5.1)
+Requirement already satisfied: hf-xet<2.0.0,>=1.6.0 in .\.venv\Lib\site-packages (from huggingface_hub->-r requirements.txt (line 17)) (1.8.0)
+Requirement already satisfied: httpx2<3,>=2.0.0 in .\.venv\Lib\site-packages (from huggingface_hub->-r requirements.txt (line 17)) (2.16.2)
+Requirement already satisfied: anyio>=4.10 in .\.venv\Lib\site-packages (from httpx2<3,>=2.0.0->huggingface_hub->-r requirements.txt (line 17)) (4.16.0)
+Requirement already satisfied: httpcore2==2.16.2 in .\.venv\Lib\site-packages (from httpx2<3,>=2.0.0->huggingface_hub->-r requirements.txt (line 17)) (2.16.2)
+Requirement already satisfied: truststore>=0.10 in .\.venv\Lib\site-packages (from httpx2<3,>=2.0.0->huggingface_hub->-r requirements.txt (line 17)) (0.10.5)
+Requirement already satisfied: h11>=0.16 in .\.venv\Lib\site-packages (from httpcore2==2.16.2->httpx2<3,>=2.0.0->huggingface_hub->-r requirements.txt (line 17)) (0.16.0)
+Requirement already satisfied: scipy>=1.10.0 in .\.venv\Lib\site-packages (from scikit-learn->-r requirements.txt (line 11)) (1.18.1)
+Requirement already satisfied: joblib>=1.4.0 in .\.venv\Lib\site-packages (from scikit-learn->-r requirements.txt (line 11)) (1.6.0)
+Requirement already satisfied: narwhals>=2.0.1 in .\.venv\Lib\site-packages (from scikit-learn->-r requirements.txt (line 11)) (2.29.0)
+Requirement already satisfied: threadpoolctl>=3.5.0 in .\.venv\Lib\site-packages (from scikit-learn->-r requirements.txt (line 11)) (3.8.0)
+Requirement already satisfied: contourpy>=1.0.1 in .\.venv\Lib\site-packages (from matplotlib->-r requirements.txt (line 13)) (1.4.0)
+Requirement already satisfied: cycler>=0.10 in .\.venv\Lib\site-packages (from matplotlib->-r requirements.txt (line 13)) (0.12.1)
+Requirement already satisfied: fonttools>=4.28.2 in .\.venv\Lib\site-packages (from matplotlib->-r requirements.txt (line 13)) (4.68.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in .\.venv\Lib\site-packages (from matplotlib->-r requirements.txt (line 13)) (1.5.1)
+Requirement already satisfied: pillow>=9 in .\.venv\Lib\site-packages (from matplotlib->-r requirements.txt (line 13)) (13.0.0)
+Requirement already satisfied: pyparsing>=3 in .\.venv\Lib\site-packages (from matplotlib->-r requirements.txt (line 13)) (3.3.3)
+Requirement already satisfied: notebook in .\.venv\Lib\site-packages (from jupyter->-r requirements.txt (line 14)) (7.6.5)
+Requirement already satisfied: jupyter-console in .\.venv\Lib\site-packages (from jupyter->-r requirements.txt (line 14)) (6.6.3)
+Requirement already satisfied: nbconvert in .\.venv\Lib\site-packages (from jupyter->-r requirements.txt (line 14)) (7.17.2)
+Requirement already satisfied: ipykernel in .\.venv\Lib\site-packages (from jupyter->-r requirements.txt (line 14)) (7.4.0)
+Requirement already satisfied: ipywidgets in .\.venv\Lib\site-packages (from jupyter->-r requirements.txt (line 14)) (8.1.9)
+Requirement already satisfied: jupyterlab in .\.venv\Lib\site-packages (from jupyter->-r requirements.txt (line 14)) (4.6.6)
+Requirement already satisfied: iniconfig>=2 in .\.venv\Lib\site-packages (from pytest->-r requirements.txt (line 15)) (2.3.1)
+Requirement already satisfied: pluggy<2,>=1.6 in .\.venv\Lib\site-packages (from pytest->-r requirements.txt (line 15)) (1.7.0)
+Requirement already satisfied: pygments>=2.15 in .\.venv\Lib\site-packages (from pytest->-r requirements.txt (line 15)) (2.21.0)
+Requirement already satisfied: einops<1,>=0.8.0 in .\.venv\Lib\site-packages (from maia2->-r requirements.txt (line 16)) (0.8.2)
+Requirement already satisfied: gdown<6,>=5.2.2 in .\.venv\Lib\site-packages (from maia2->-r requirements.txt (line 16)) (5.2.2)
+Requirement already satisfied: pyzstd<0.20,>=0.19.1 in .\.venv\Lib\site-packages (from maia2->-r requirements.txt (line 16)) (0.19.1)
+Requirement already satisfied: beautifulsoup4 in .\.venv\Lib\site-packages (from gdown<6,>=5.2.2->maia2->-r requirements.txt (line 16)) (4.15.0)
+Requirement already satisfied: backports-zstd>=1.0.0 in .\.venv\Lib\site-packages (from pyzstd<0.20,>=0.19.1->maia2->-r requirements.txt (line 16)) (1.8.0)
+Requirement already satisfied: polars-runtime-32==2.1.0 in .\.venv\Lib\site-packages (from polars->-r requirements.txt (line 18)) (2.1.0)
+Requirement already satisfied: cloudpickle>=3.0 in .\.venv\Lib\site-packages (from joblib>=1.4.0->scikit-learn->-r requirements.txt (line 11)) (3.1.3)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in .\.venv\Lib\site-packages (from sympy>=1.13.3->torch->-r requirements.txt (line 2)) (1.3.0)
+Requirement already satisfied: soupsieve>=1.6.1 in .\.venv\Lib\site-packages (from beautifulsoup4->gdown<6,>=5.2.2->maia2->-r requirements.txt (line 16)) (4.1.3)
+Requirement already satisfied: comm>=0.1.1 in .\.venv\Lib\site-packages (from ipykernel->jupyter->-r requirements.txt (line 14)) (0.2.3)
+Requirement already satisfied: debugpy>=1.6.5 in .\.venv\Lib\site-packages (from ipykernel->jupyter->-r requirements.txt (line 14)) (1.8.22)
+Requirement already satisfied: ipython>=7.23.1 in .\.venv\Lib\site-packages (from ipykernel->jupyter->-r requirements.txt (line 14)) (9.18.1)
+Requirement already satisfied: jupyter-client>=8.9.0 in .\.venv\Lib\site-packages (from ipykernel->jupyter->-r requirements.txt (line 14)) (8.10.0)
+Requirement already satisfied: jupyter-core!=6.0.*,>=5.1 in .\.venv\Lib\site-packages (from ipykernel->jupyter->-r requirements.txt (line 14)) (5.9.1)
+Requirement already satisfied: matplotlib-inline>=0.1 in .\.venv\Lib\site-packages (from ipykernel->jupyter->-r requirements.txt (line 14)) (0.2.2)
+Requirement already satisfied: nest-asyncio2>=1.7.0 in .\.venv\Lib\site-packages (from ipykernel->jupyter->-r requirements.txt (line 14)) (1.7.4)
+Requirement already satisfied: pyzmq>=25 in .\.venv\Lib\site-packages (from ipykernel->jupyter->-r requirements.txt (line 14)) (27.3.0)
+Requirement already satisfied: tornado>=6.5.7 in .\.venv\Lib\site-packages (from ipykernel->jupyter->-r requirements.txt (line 14)) (6.6.1)
+Requirement already satisfied: traitlets>=5.4.0 in .\.venv\Lib\site-packages (from ipykernel->jupyter->-r requirements.txt (line 14)) (5.16.1)
+Requirement already satisfied: ipython-pygments-lexers>=1.0.0 in .\.venv\Lib\site-packages (from ipython>=7.23.1->ipykernel->jupyter->-r requirements.txt (line 14)) (1.1.1)
+Requirement already satisfied: jedi>=0.18.2 in .\.venv\Lib\site-packages (from ipython>=7.23.1->ipykernel->jupyter->-r requirements.txt (line 14)) (0.20.1)
+Requirement already satisfied: prompt_toolkit<3.1.0,>=3.0.41 in .\.venv\Lib\site-packages (from ipython>=7.23.1->ipykernel->jupyter->-r requirements.txt (line 14)) (3.0.53)
+Requirement already satisfied: psutil>=7 in .\.venv\Lib\site-packages (from ipython>=7.23.1->ipykernel->jupyter->-r requirements.txt (line 14)) (7.2.2)
+Requirement already satisfied: stack_data>=0.6.0 in .\.venv\Lib\site-packages (from ipython>=7.23.1->ipykernel->jupyter->-r requirements.txt (line 14)) (0.6.3)
+Requirement already satisfied: wcwidth>=0.1.4 in .\.venv\Lib\site-packages (from prompt_toolkit<3.1.0,>=3.0.41->ipython>=7.23.1->ipykernel->jupyter->-r requirements.txt (line 14)) (0.9.4)
+Requirement already satisfied: parso<0.9.0,>=0.8.7 in .\.venv\Lib\site-packages (from jedi>=0.18.2->ipython>=7.23.1->ipykernel->jupyter->-r requirements.txt (line 14)) (0.8.7)
+Requirement already satisfied: platformdirs>=2.5 in .\.venv\Lib\site-packages (from jupyter-core!=6.0.*,>=5.1->ipykernel->jupyter->-r requirements.txt (line 14)) (4.14.8)
+Requirement already satisfied: executing>=1.2.0 in .\.venv\Lib\site-packages (from stack_data>=0.6.0->ipython>=7.23.1->ipykernel->jupyter->-r requirements.txt (line 14)) (2.3.0)
+Requirement already satisfied: asttokens>=2.1.0 in .\.venv\Lib\site-packages (from stack_data>=0.6.0->ipython>=7.23.1->ipykernel->jupyter->-r requirements.txt (line 14)) (3.0.2)
+Requirement already satisfied: pure-eval in .\.venv\Lib\site-packages (from stack_data>=0.6.0->ipython>=7.23.1->ipykernel->jupyter->-r requirements.txt (line 14)) (0.2.4)
+Requirement already satisfied: widgetsnbextension~=4.0.16 in .\.venv\Lib\site-packages (from ipywidgets->jupyter->-r requirements.txt (line 14)) (4.0.16)
+Requirement already satisfied: jupyterlab_widgets~=3.0.17 in .\.venv\Lib\site-packages (from ipywidgets->jupyter->-r requirements.txt (line 14)) (3.0.17)
+Requirement already satisfied: MarkupSafe>=2.0 in .\.venv\Lib\site-packages (from jinja2->torch->-r requirements.txt (line 2)) (3.0.3)
+Requirement already satisfied: async-lru>=1.0.0 in .\.venv\Lib\site-packages (from jupyterlab->jupyter->-r requirements.txt (line 14)) (2.4.0)
+Requirement already satisfied: httpx<1,>=0.25.0 in .\.venv\Lib\site-packages (from jupyterlab->jupyter->-r requirements.txt (line 14)) (0.28.1)
+Requirement already satisfied: jupyter-builder>=1.0.2 in .\.venv\Lib\site-packages (from jupyterlab->jupyter->-r requirements.txt (line 14)) (1.3.0)
+Requirement already satisfied: jupyter-lsp>=2.0.0 in .\.venv\Lib\site-packages (from jupyterlab->jupyter->-r requirements.txt (line 14)) (2.3.1)
+Requirement already satisfied: jupyter-server<3,>=2.19.0 in .\.venv\Lib\site-packages (from jupyterlab->jupyter->-r requirements.txt (line 14)) (2.21.1)
+Requirement already satisfied: jupyterlab-server<3,>=2.28.0 in .\.venv\Lib\site-packages (from jupyterlab->jupyter->-r requirements.txt (line 14)) (2.28.1)
+Requirement already satisfied: notebook-shim>=0.2 in .\.venv\Lib\site-packages (from jupyterlab->jupyter->-r requirements.txt (line 14)) (0.2.4)
+Requirement already satisfied: httpcore==1.* in .\.venv\Lib\site-packages (from httpx<1,>=0.25.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (1.0.9)
+Requirement already satisfied: argon2-cffi>=21.1 in .\.venv\Lib\site-packages (from jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (25.1.0)
+Requirement already satisfied: jupyter-events>=0.11.0 in .\.venv\Lib\site-packages (from jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (0.12.1)
+Requirement already satisfied: jupyter-server-terminals>=0.4.4 in .\.venv\Lib\site-packages (from jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (0.5.4)
+Requirement already satisfied: nbformat>=5.3.0 in .\.venv\Lib\site-packages (from jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (5.11.1)
+Requirement already satisfied: prometheus-client>=0.9 in .\.venv\Lib\site-packages (from jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (0.26.0)
+Requirement already satisfied: pywinpty!=3.0.4,>=2.0.1 in .\.venv\Lib\site-packages (from jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (3.1.2)
+Requirement already satisfied: send2trash>=1.8.2 in .\.venv\Lib\site-packages (from jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (2.2.0)
+Requirement already satisfied: terminado>=0.8.3 in .\.venv\Lib\site-packages (from jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (0.18.1)
+Requirement already satisfied: websocket-client>=1.7 in .\.venv\Lib\site-packages (from jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (1.9.2)
+Requirement already satisfied: babel>=2.10 in .\.venv\Lib\site-packages (from jupyterlab-server<3,>=2.28.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (2.18.0)
+Requirement already satisfied: json5>=0.9.0 in .\.venv\Lib\site-packages (from jupyterlab-server<3,>=2.28.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (0.17.3)
+Requirement already satisfied: jsonschema>=4.18.0 in .\.venv\Lib\site-packages (from jupyterlab-server<3,>=2.28.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (4.26.0)
+Requirement already satisfied: argon2-cffi-bindings in .\.venv\Lib\site-packages (from argon2-cffi>=21.1->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (26.2.0)
+Requirement already satisfied: attrs>=22.2.0 in .\.venv\Lib\site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.28.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in .\.venv\Lib\site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.28.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in .\.venv\Lib\site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.28.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in .\.venv\Lib\site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.28.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (2026.9.1)
+Requirement already satisfied: python-json-logger>=2.0.4 in .\.venv\Lib\site-packages (from jupyter-events>=0.11.0->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (4.2.0)
+Requirement already satisfied: rfc3339-validator in .\.venv\Lib\site-packages (from jupyter-events>=0.11.0->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (0.1.4)
+Requirement already satisfied: rfc3986-validator>=0.1.1 in .\.venv\Lib\site-packages (from jupyter-events>=0.11.0->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (0.1.1)
+Requirement already satisfied: fqdn in .\.venv\Lib\site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (1.6.0)
+Requirement already satisfied: isoduration in .\.venv\Lib\site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (20.11.0)
+Requirement already satisfied: jsonpointer>1.13 in .\.venv\Lib\site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (3.12)
+Requirement already satisfied: rfc3987-syntax>=1.1.0 in .\.venv\Lib\site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (1.1.0)
+Requirement already satisfied: uri-template in .\.venv\Lib\site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (1.3.0)
+Requirement already satisfied: webcolors>=24.6.0 in .\.venv\Lib\site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (25.10.0)
+Requirement already satisfied: bleach!=5.0.0 in .\.venv\Lib\site-packages (from bleach[css]!=5.0.0->nbconvert->jupyter->-r requirements.txt (line 14)) (6.4.0)
+Requirement already satisfied: defusedxml in .\.venv\Lib\site-packages (from nbconvert->jupyter->-r requirements.txt (line 14)) (0.7.1)
+Requirement already satisfied: jupyterlab-pygments in .\.venv\Lib\site-packages (from nbconvert->jupyter->-r requirements.txt (line 14)) (0.3.0)
+Requirement already satisfied: mistune<4,>=2.0.3 in .\.venv\Lib\site-packages (from nbconvert->jupyter->-r requirements.txt (line 14)) (3.4.0)
+Requirement already satisfied: nbclient>=0.5.0 in .\.venv\Lib\site-packages (from nbconvert->jupyter->-r requirements.txt (line 14)) (0.11.0)
+Requirement already satisfied: pandocfilters>=1.4.1 in .\.venv\Lib\site-packages (from nbconvert->jupyter->-r requirements.txt (line 14)) (1.5.1)
+Requirement already satisfied: webencodings in .\.venv\Lib\site-packages (from bleach!=5.0.0->bleach[css]!=5.0.0->nbconvert->jupyter->-r requirements.txt (line 14)) (0.6.1)
+Requirement already satisfied: tinycss2>=1.1.0 in .\.venv\Lib\site-packages (from bleach[css]!=5.0.0->nbconvert->jupyter->-r requirements.txt (line 14)) (1.5.1)
+Requirement already satisfied: fastjsonschema>=2.15 in .\.venv\Lib\site-packages (from nbformat>=5.3.0->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (2.22.3)
+Requirement already satisfied: lark>=1.2.2 in .\.venv\Lib\site-packages (from rfc3987-syntax>=1.1.0->jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (1.3.1)
+Requirement already satisfied: cffi>=1.0.1 in .\.venv\Lib\site-packages (from argon2-cffi-bindings->argon2-cffi>=21.1->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (2.1.1)
+Requirement already satisfied: pycparser in .\.venv\Lib\site-packages (from cffi>=1.0.1->argon2-cffi-bindings->argon2-cffi>=21.1->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (3.12)
+Requirement already satisfied: arrow>=0.15.0 in .\.venv\Lib\site-packages (from isoduration->jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (1.4.0)
+Requirement already satisfied: PySocks!=1.5.7,>=1.5.6 in .\.venv\Lib\site-packages (from requests[socks]->gdown<6,>=5.2.2->maia2->-r requirements.txt (line 16)) (1.7.1)
+Requirement already satisfied: six in .\.venv\Lib\site-packages (from rfc3339-validator->jupyter-events>=0.11.0->jupyter-server<3,>=2.19.0->jupyterlab->jupyter->-r requirements.txt (line 14)) (1.17.0)
+
+=== Installing the chesspred package (editable)
+Obtaining file:///C:/Users/Logan/OneDrive/Desktop/chess/chess_ml
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: chesspred
+  Building editable for chesspred (pyproject.toml): started
+  Building editable for chesspred (pyproject.toml): finished with status 'done'
+  Created wheel for chesspred: filename=chesspred-0.1.0-0.editable-py3-none-any.whl size=1274 sha256=f836c5330095ac06532d0655e91b582d3e4dc99cacfad7a38d27c6190ca45e2e
+  Stored in directory: C:\Users\Logan\AppData\Local\Temp\pip-ephem-wheel-cache-vnprllpd\wheels\77\d4\b6\6eb2a6e977100b55f8fa7e51d13af30c6c27320d09514fc142
+Successfully built chesspred
+Installing collected packages: chesspred
+  Attempting uninstall: chesspred
+    Found existing installation: chesspred 0.1.0
+    Uninstalling chesspred-0.1.0:
+      Successfully uninstalled chesspred-0.1.0
+Successfully installed chesspred-0.1.0
+
+=== Checking the GPU and imports
+torch 2.8.0+cu126 | CUDA build 12.6 | numpy 2.5.5
+GPU: NVIDIA GeForce RTX 3060 | bf16: True
+ResNet 6x64 forward pass on GPU OK: (8, 4096)
+
+=== Running the test suite
+.........sss                                                             [100%]
+9 passed, 3 skipped in 2.76s
+
+=== DONE - .venv is ready.
+
+=== Activate it with:  .\.venv\Scripts\Activate.ps1   then e.g.  python -m chesspred.train configs/resnet_6x64_lichess.yaml --overfit 64
+SETUP_RESULT=OK

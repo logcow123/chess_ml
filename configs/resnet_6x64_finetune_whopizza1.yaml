@@ -9,7 +9,7 @@ name: resnet_6x64_finetune_whopizza1
 # Add e.g.  model: {elo: true}  to switch on Elo conditioning while fine-tuning.
 
 data:
-  train: data/processed/chesscom_whopizza1_2026-11-06_rapid_whopizza1-moves.npz
+  train: data/processed/chesscom_whopizza1_2026-11-20_rapid_whopizza1-moves.npz
 
 train:
   init_from: models/runs/resnet_6x64_lichess/best.pt

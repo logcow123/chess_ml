@@ -1,0 +1,137 @@
+﻿fetch_data started 2026-11-20T13:27:16
+
+=== chess.com: downloading all of whopizza1's games
+[1/36] 2026/11
+[2/36] 2026/10
+[3/36] 2026/09
+[4/36] 2026/08
+[5/36] 2026/07
+[6/36] 2026/06
+[7/36] 2026/05
+[8/36] 2026/04
+[9/36] 2026/03
+[10/36] 2026/02
+[11/36] 2026/01
+[12/36] 2025/12
+[13/36] 2025/11
+[14/36] 2025/10
+[15/36] 2025/09
+[16/36] 2025/08
+[17/36] 2025/06
+[18/36] 2025/05
+[19/36] 2025/04
+[20/36] 2025/03
+[21/36] 2025/02
+[22/36] 2025/01
+[23/36] 2024/12
+[24/36] 2024/11
+[25/36] 2024/10
+[26/36] 2024/09
+[27/36] 2024/08
+[28/36] 2024/07
+[29/36] 2024/06
+[30/36] 2024/05
+[31/36] 2024/04
+[32/36] 2024/03
+[33/36] 2024/02
+[34/36] 2024/01
+[35/36] 2023/12
+[36/36] 2023/11
+Saved 1569 games from 36 months to C:\Users\Logan\OneDrive\Desktop\chess\chess_ml\data\raw\chesscom_whopizza1_2026-11-20.jsonl
+
+=== chess.com: parsing rapid games, keeping whopizza1's moves
+Parsing 1 file(s), keeping speeds ['rapid'], only whopizza1's moves
+  -> C:\Users\Logan\OneDrive\Desktop\chess\chess_ml\data\processed\chesscom_whopizza1_2026-11-20_rapid_whopizza1-moves.parquet
+
+Done in 3.2s
+  games read:        1,569
+  by speed:          {'rapid': 796, 'blitz': 674, 'bullet': 94, 'daily': 5}
+  games kept:        796
+  positions (rows):  28,233
+  file:              C:\Users\Logan\OneDrive\Desktop\chess\chess_ml\data\processed\chesscom_whopizza1_2026-11-20_rapid_whopizza1-moves.parquet  (0.5 MB)
+
+=== chess.com: pre-encoding (uses the frozen split in data\splits)
+Pre-encoding data\processed\chesscom_whopizza1_2026-11-20_rapid_whopizza1-moves.parquet
+  -> data\processed\chesscom_whopizza1_2026-11-20_rapid_whopizza1-moves.npz
+  encoded 28,233/28,233 positions (9s)
+
+Done in 8.6s: 28,233 positions (0 bad rows dropped)
+  split (frozen): {'train': 18208, 'val': 2459, 'test': 5668, 'unassigned': 1898}
+  max legal moves in one position: 63
+  file: data\processed\chesscom_whopizza1_2026-11-20_rapid_whopizza1-moves.npz  (8 MB)
+
+=== Updated configs\resnet_6x64_finetune_whopizza1.yaml to train on data/processed/chesscom_whopizza1_2026-11-20_rapid_whopizza1-moves.npz
+
+=== Lichess: downloading 4 shards of 2025-09 and filtering them (the slow part)
+Saving to C:\Users\Logan\OneDrive\Desktop\chess\chess_ml\data\raw\lichess
+2025-09: 62 shards available, using 4
+[1/4] downloading data/year=2025/month=09/train-00024-of-00062.parquet ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+    1,013 MB raw -> kept 196,241 of 1,404,031 games (14.0%) in 94s
+[2/4] downloading data/year=2025/month=09/train-00048-of-00062.parquet ...
+    1,004 MB raw -> kept 199,165 of 1,404,030 games (14.2%) in 78s
+[3/4] downloading data/year=2025/month=09/train-00054-of-00062.parquet ...
+    1,007 MB raw -> kept 197,134 of 1,404,030 games (14.0%) in 76s
+[4/4] downloading data/year=2025/month=09/train-00056-of-00062.parquet ...
+    1,012 MB raw -> kept 195,806 of 1,404,030 games (13.9%) in 75s
+
+Done.
+  games:              788,346
+  approx. positions:  51,260,190  (roadmap week 2 wants 1-5M, week 3 wants 10M+)
+  by speed:           {'Blitz': 551077, 'Rapid': 237269}
+  file:               C:\Users\Logan\OneDrive\Desktop\chess\chess_ml\data\raw\lichess\lichess_2025-09_blitz-rapid_900-1400.parquet  (358 MB)
+
+=== Lichess: parsing rapid games into positions
+Parsing 1 file(s), keeping speeds ['rapid']
+  -> C:\Users\Logan\OneDrive\Desktop\chess\chess_ml\data\processed\lichess_2025-09_blitz-rapid_900-1400_rapid.parquet
+
+Done in 193.3s
+  games read:        788,346
+  by speed:          {'blitz': 551077, 'rapid': 237269}
+  games kept:        237,261
+  skipped:           {'duplicate': 8}
+  positions (rows):  15,116,048
+  file:              C:\Users\Logan\OneDrive\Desktop\chess\chess_ml\data\processed\lichess_2025-09_blitz-rapid_900-1400_rapid.parquet  (206.4 MB)
+
+=== Lichess: pre-encoding
+Pre-encoding data\processed\lichess_2025-09_blitz-rapid_900-1400_rapid.parquet
+  -> data\processed\lichess_2025-09_blitz-rapid_900-1400_rapid.npz
+  encoded 500,000/15,116,048 positions (21s)
+  encoded 1,000,000/15,116,048 positions (32s)
+  encoded 1,500,000/15,116,048 positions (43s)
+  encoded 2,000,000/15,116,048 positions (55s)
+  encoded 2,500,000/15,116,048 positions (63s)
+  encoded 3,000,000/15,116,048 positions (78s)
+  encoded 3,500,000/15,116,048 positions (86s)
+  encoded 4,000,000/15,116,048 positions (100s)
+  encoded 4,500,000/15,116,048 positions (110s)
+  encoded 5,000,000/15,116,048 positions (120s)
+  encoded 5,500,000/15,116,048 positions (134s)
+  encoded 6,000,000/15,116,048 positions (143s)
+  encoded 6,500,000/15,116,048 positions (158s)
+  encoded 7,000,000/15,116,048 positions (166s)
+  encoded 7,500,000/15,116,048 positions (176s)
+  encoded 8,000,000/15,116,048 positions (187s)
+  encoded 8,500,000/15,116,048 positions (200s)
+  encoded 9,000,000/15,116,048 positions (214s)
+  encoded 9,500,000/15,116,048 positions (223s)
+  encoded 10,000,000/15,116,048 positions (234s)
+  encoded 10,500,000/15,116,048 positions (244s)
+  encoded 11,000,000/15,116,048 positions (256s)
+  encoded 11,500,000/15,116,048 positions (264s)
+  encoded 12,000,000/15,116,048 positions (279s)
+  encoded 12,500,000/15,116,048 positions (289s)
+  encoded 13,000,000/15,116,048 positions (301s)
+  encoded 13,500,000/15,116,048 positions (313s)
+  encoded 14,000,000/15,116,048 positions (322s)
+  encoded 14,500,000/15,116,048 positions (337s)
+  encoded 15,000,000/15,116,048 positions (344s)
+  encoded 15,116,048/15,116,048 positions (346s)
+
+Done in 364.6s: 15,116,048 positions (0 bad rows dropped)
+  split (hash): {'train': 14814031, 'val': 302017, 'test': 0, 'unassigned': 0}
+  max legal moves in one position: 110
+  file: data\processed\lichess_2025-09_blitz-rapid_900-1400_rapid.npz  (5,725 MB)
+
+=== DONE - data is ready. Next: python -m chesspred.train configs/resnet_6x64_lichess.yaml --overfit 64
+FETCH_RESULT=OK
